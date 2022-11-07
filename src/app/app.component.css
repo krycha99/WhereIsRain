@@ -1,0 +1,47 @@
+
+#map {
+height: 100vh;
+margin: 0;
+padding: 0;
+}
+
+@media screen and (max-width: 1920px) {
+    .left, .main, .right .widget {
+      width: 100%; 
+    }
+    .namePanel {
+        margin-left: 10%;
+        
+    }
+    .widget {
+        width: 50px;
+    }
+  }
+
+  .namePanel {
+    background-image: linear-gradient(to bottom right, #000080, #3333ff);
+     border-radius: 90px;
+     height: 60px;
+      width: 100vh;
+       text-align:center;
+        margin-left: 50%;
+        color: whitesmoke; 
+        position: relative;
+        font-size: 24px;
+        
+  }
+
+  .widget {
+    background-image: linear-gradient(to bottom right, #000080, #3333ff);
+     margin-top: 20%;
+      height: 400px;
+       width: 250px;
+        margin-left: 20px;
+         border-radius: 50px; 
+  }
+
+  .shadow {
+    -webkit-box-shadow: 6px 13px 36px -9px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 6px 13px 36px -9px rgba(66, 68, 90, 1);
+    box-shadow: 6px 13px 36px -9px rgba(66, 68, 90, 1);
+  }
