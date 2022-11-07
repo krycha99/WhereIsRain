@@ -9,4 +9,4 @@ The left panel shows the moon and the sun (depending on the time of day in the c
 
 ![image](https://user-images.githubusercontent.com/45632898/200343206-efabd5af-2593-498c-baa3-bda05a71d500.png)
 
-With each search, the application marks a city with the current weather, so that the user can check the weather in different places and compare it thanks to animated gifs on the map
+With each search, the application marks a city with the current weather, so user can check weather in different places and compare it thanks to animated gifs on the map.
