@@ -2,3 +2,15 @@
 body {
     margin: 0;
 }
+.leaflet-top {
+    
+}
+.leaflet-bar{
+    background-color: transparent;
+    margin-top: 100px;
+}
+.leaflet-control-geocoder {
+    background-color: green;
+}
+.leaflet-top .leaflet-right{
+}
