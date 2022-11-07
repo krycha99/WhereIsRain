@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherWidgetComponent } from "./Components/weather-widget/weather-widget.component"
 
 declare const L: any;
 
@@ -12,21 +11,22 @@ export class AppComponent implements OnInit{
   title = 'WhereIsRain';
 
   ngOnInit(){
+
     //Checking user location
     if(!navigator.geolocation){
       console.log('location is not supported');
     }
     navigator.geolocation.getCurrentPosition((position) => {
-      // console.log(`lat: ${position.coords.latitude}, lon: ${position.coords.longitude}`);
-        var crd = position.coords;
-        var lat = crd.latitude.toString();
-        var lng = crd.longitude.toString();
-        var coordinates = [lat, lng];
+      //setting cords for lookig city
+        let crd = position.coords;
+        let lat = crd.latitude.toString();
+        let lng = crd.longitude.toString();
+        let coordinates = [lat, lng];
       this.getCity(coordinates);
-      //ustawiamy miasto
+      //setting city
       
      //map open
-    var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 14);
+    let map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 14);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -38,30 +38,27 @@ export class AppComponent implements OnInit{
    }).addTo(map);
 
    //custom marker on searching
-   var geocoder = L.Control.geocoder({
+   let geocoder = L.Control.geocoder({
     defaultMarkGeocode: false
   })
     .on('markgeocode', function(e: { geocode: { name: any; center: any; bbox: any;  }; }) {
 
-
-      //sprawdzanie pogody po elemencie
-    //zdobycie nazwy miasta i zmiana na widgecie
-          var latlng = e.geocode.center;
+      //Getting name of thhe city and changin it for currently
+          let latlng = e.geocode.center;
           
       let nameArr = e.geocode.name.split(",");
-      console.log(nameArr);
-      console.log("sama nazwa: " + nameArr[0]);
+      // console.log(nameArr);
+      // console.log("sama nazwa: " + nameArr[0]);
       const span = <HTMLElement>document.getElementById('cityName');
       span.textContent = nameArr[0];
 
-      //sprawdzenie pogody po zmianie chyba
+      //cheking weather
       const myTimeout = setTimeout(function(){
       const box = document.getElementById('testpogody') as HTMLDivElement | null;
       let sprawdzam = (<HTMLElement>document.getElementById("testpogody")).nodeValue;
-      console.log(box?.innerHTML );
+      // console.log(box?.innerHTML );
       let url;
-      //wybór zdjecia do pogody
-      //  Snow, Thunderstorm,   
+      //  Cheking weather to chose image,   
       if(box?.innerHTML == "Haze" || box?.innerHTML == "Clouds"){
         url = 'assets/day/cloudy.svg';
       }
@@ -77,7 +74,7 @@ export class AppComponent implements OnInit{
       else {
         url = 'assets/day/day.svg';
       }
-      var markIcon = L.icon({
+      let markIcon = L.icon({
             
         iconUrl: url,
 
@@ -88,7 +85,7 @@ export class AppComponent implements OnInit{
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
  });
 
-      var marker = L.marker(latlng,{icon: markIcon}).addTo(map);
+      let marker = L.marker(latlng,{icon: markIcon}).addTo(map);
     }, 1500);
       map.fitBounds(e.geocode.bbox);
     })
@@ -97,8 +94,9 @@ export class AppComponent implements OnInit{
    //adding custom marker at startpoint
    const myTimeout = setTimeout(function(){
     let url =  'assets/rainy-1.svg';
-    //wybór zdjecia do pogody
+    //cheking img for weather
     const box = document.getElementById('testpogody') as HTMLDivElement | null;
+
     if(box?.innerHTML == "Haze" || box?.innerHTML == "Clouds"){
       url = 'assets/day/cloudy.svg';
     }
@@ -114,7 +112,7 @@ export class AppComponent implements OnInit{
     else {
       url = 'assets/day/day.svg';
     }
-      var customIcon = L.icon({
+      let customIcon = L.icon({
         
         iconUrl: url,
         iconSize:     [150, 250], // size of the icon
@@ -131,22 +129,15 @@ export class AppComponent implements OnInit{
    }, 1500);
    
 
-  
-  
+  });
 
-   });
-
-   
-    
-   
-
-  }
+ }
   getCity(coordinates: any[]) {
-    var xhr = new XMLHttpRequest();
-    var lat = coordinates[0];
-    var lng = coordinates[1];
+    let xhr = new XMLHttpRequest();
+    let lat = coordinates[0];
+    let lng = coordinates[1];
   
-    // Paste your LocationIQ token below.
+    // locationIQ api.
     xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?" + window.atob("a2V5PXBrLjNkNWFjNDc4NjQzODgzNTU1ZWIyNDg4MjM4NTQ0ODlhJmxhdD0=") +
     lat + "&lon=" + lng + "&format=json", true);
     xhr.send();
@@ -164,7 +155,7 @@ export class AppComponent implements OnInit{
               city = response.address.village;
             }
             
-            console.log(city);
+            // console.log(city);
             const span = <HTMLElement>document.getElementById('cityName');
           span.textContent = city;
             return city;
