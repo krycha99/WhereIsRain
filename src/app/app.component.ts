@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
       console.log('location is not supported');
     }
     navigator.geolocation.getCurrentPosition((position) => {
-      // console.log(`lat: ${position.coords.latitude}, lon: ${position.coords.longitude}`);
+      // console.log(`lat: ${position.coords.latitude}, lon: ${position.coords.longitude}`);test
 
      //map open
     var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);
