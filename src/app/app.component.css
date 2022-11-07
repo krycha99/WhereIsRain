@@ -5,28 +5,27 @@ margin: 0;
 padding: 0;
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1000px) {
     .left, .main, .right .widget {
       width: 100%; 
     }
     .namePanel {
-        margin-left: 50%;
+      visibility: hidden;
         
     }
     .widget {
-        width: 50px;
+        margin-top: 100px;
     }
   }
 
   .namePanel {
-    background-image: linear-gradient(to bottom right, #000080, #3333ff);
+    background-image: linear-gradient(to bottom right, #000080, #000033);
      border-radius: 90px;
      opacity: 0.85;
      height: 60px;
       width: 100vh;
        text-align:center;
         margin-left: 50%;
-        margin-right: 50%;
         color: whitesmoke; 
         position: relative;
         font-size: 22px;
@@ -34,9 +33,7 @@ padding: 0;
   }
 
   .widget {
-    background-image: linear-gradient(to bottom right, #000080, #3333ff);
-    /* background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(8,7,42,1) 75%, rgb(8, 10, 63) 100%); */
+    background-image: linear-gradient(to bottom right, #000080, #000033);
      margin-top: 20%;
      opacity: 0.85;
       height: 400px;

@@ -27,11 +27,7 @@ export class WeatherWidgetComponent implements OnInit {
     else{
       console.log("wszystko sie zgadza nic nie zmieniam");
     }
-    
-    // const siemanko = span?.innerHTML;
-    // console.log(siemanko);
-    // this.getWeatherDataByName(siemanko);
-    }, 3000);
+    }, 1000);
   }
 
   getWeatherData(){

@@ -2,15 +2,24 @@
 body {
     margin: 0;
 }
-.leaflet-top {
-    
-}
-.leaflet-bar{
-    background-color: transparent;
-    margin-top: 100px;
-}
 .leaflet-control-geocoder {
-    background-color: green;
+    color: aliceblue;
+    opacity: 0.8;
 }
-.leaflet-top .leaflet-right{
+.leaflet-control-geocoder-icon {
+    color: whitesmoke;
 }
+button.leaflet-control-geocoder-icon {
+    background-color:  #000080;
+}
+a.leaflet-control-zoom-in  {
+    background-image: linear-gradient(to bottom right, #000080, #000033);
+    opacity: 0.75;
+}
+a.leaflet-control-zoom-out  {
+    background-image: linear-gradient(to bottom right, #000080, #000033);
+    opacity: 0.75;
+}
+.leaflet-control-container .leaflet-top .leaflet-control-zoom a.leaflet-control-zoom-in { color: whitesmoke; }
+.leaflet-control-container .leaflet-top .leaflet-control-zoom a.leaflet-control-zoom-out { color: whitesmoke; }
+.leaflet-control-container .leaflet-top .leaflet-control-geocoder  button.leaflet-control-geocoder-icon{ color: whitesmoke; }

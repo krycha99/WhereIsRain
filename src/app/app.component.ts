@@ -26,7 +26,7 @@ export class AppComponent implements OnInit{
       //ustawiamy miasto
       
      //map open
-    var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 15);
+    var map = L.map('map').setView([position.coords.latitude, position.coords.longitude], 14);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
@@ -77,19 +77,19 @@ export class AppComponent implements OnInit{
       else {
         url = 'assets/day/day.svg';
       }
-      var greenIcon = L.icon({
+      var markIcon = L.icon({
             
         iconUrl: url,
 
         iconSize:     [150, 250], // size of the icon
         shadowSize:   [100, 200], // size of the shadow
-        iconAnchor:   [90, 220], // point of the icon which will correspond to marker's location
+        iconAnchor:   [90, 180], // point of the icon which will correspond to marker's location
         shadowAnchor: [4, 62],  // the same for the shadow
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
  });
 
-      var marker = L.marker(latlng,{icon: greenIcon}).addTo(map);
-    }, 3500);
+      var marker = L.marker(latlng,{icon: markIcon}).addTo(map);
+    }, 1500);
       map.fitBounds(e.geocode.bbox);
     })
     .addTo(map);
@@ -117,9 +117,9 @@ export class AppComponent implements OnInit{
       var customIcon = L.icon({
         
         iconUrl: url,
-        iconSize:     [100, 150], // size of the icon
-        shadowSize:   [50, 64], // size of the shadow
-        iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+        iconSize:     [150, 250], // size of the icon
+        shadowSize:   [100, 200], // size of the shadow
+        iconAnchor:   [100, 180], // point of the icon which will correspond to marker's location
         shadowAnchor: [4, 62],  // the same for the shadow
         popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
     });
@@ -128,7 +128,7 @@ export class AppComponent implements OnInit{
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-   }, 3500);
+   }, 1500);
    
 
   
