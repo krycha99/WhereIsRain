@@ -1,0 +1,17 @@
+<div id="divWeatherMain" style="margin-left: 20px;"> 
+    <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+        <img class="dayIcon sun" src="assets/day/day.svg" alt="Day">
+    </div>   
+    <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+        <img class="nightIcon moon" src="assets/day/night.svg" alt="Night">
+    </div>   
+    <div class="weatherWidgetRow cloudDiv">
+        <img class="cloudIcon cloud" src="assets/day/cloudy.svg" alt="Cloud">
+    </div>
+    <div class="weatherWidgetRow" style="font-size: 34px;margin-top: 1px;">{{WeatherData.temp_celcius}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 16px;">{{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 16px;">Feels Like: {{WeatherData.temp_feels_like}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 26px;margin-top: 10px;">{{WeatherData.name}}</div>
+    <div class="weatherWidgetRow" style="font-size: 16px;">Humidity: {{WeatherData.main.humidity}}%</div>
+    <div class="weatherWidgetRow"  style="font-size: 16px;">Weather: <span id="testpogody">{{WeatherData.weather[0].main}}</span></div>
+</div>

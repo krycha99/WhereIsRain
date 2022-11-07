@@ -1,0 +1,36 @@
+#divWeatherMain{
+    display: block;
+    border-radius: 10px;
+    width: 200px;
+    height: 220px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.weatherWidgetRow{
+    display:block;
+    margin:0 auto;
+    width: fit-content;
+}
+.sun{
+    margin-top: 10px;
+    color: yellow;
+    height: 150px;
+    filter: drop-shadow( 1px 1px 10px yellow);
+}
+.moon{
+    margin-top: 10px;
+    color: white;
+    height: 150px;
+    filter: drop-shadow( 1px 1px 10px white);
+    z-index: 2;
+}
+.cloudDiv{
+    margin-top: -110px;
+}
+
+.cloud{
+    color: rgb(104, 175, 197);
+    filter: drop-shadow( 1px 1px 5px rgb(104, 175, 197));
+    height: 110px;
+}
+
