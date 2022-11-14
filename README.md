@@ -1,6 +1,6 @@
 # WhereIsRain
 
-This is my first project with Angular framework. It's a weather app that uses <a href="https://openweathermap.org/">OpenWeather</a> and <a href="https://openweathermap.org/">LocationIQ</a> api to check the current weather in a selected place. Also uses <a href="https://leafletjs.com/">leafletjs</a> map. Application checks the user's location and creates a mark on map that shows the animated weather in a given place.
+This is my first project with Angular framework. It's a weather app that uses <a href="https://openweathermap.org/">OpenWeather</a> and <a href="https://locationiq.com/">LocationIQ</a> api to check the current weather in a selected place. Also uses <a href="https://leafletjs.com/">leafletjs</a> map. Application checks the user's location and creates a mark on map that shows the animated weather in a given place.
 
 Preview:
 ![image](https://user-images.githubusercontent.com/45632898/200340278-3b5c8e40-a44a-4a71-9e65-d4cc0af02db3.png)
